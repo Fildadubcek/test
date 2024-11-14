@@ -1,103 +1,53 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>Fitness & Wellness Tracker</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
-  <body>
-    <header class="bg-primary text-white text-center py-4">
-        <h1>Fitness & Wellness Tracker</h1>
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness and Wellness Tracker</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Odkaz na externí CSS soubor -->
+</head>
+<body>
+    <header>
+        <h1>Fitness and Wellness Tracker</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Domů</a></li>
+                <li><a href="#features">Funkce</a></li>
+                <li><a href="#about">O nás</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">Home</a>
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">Training</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Meals</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Sleep</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Wellness</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <main>
+        <section id="home">
+            <h2>Vítejte v aplikaci Fitness and Wellness Tracker</h2>
+            <p>Začněte svou cestu ke zdravějšímu životnímu stylu s naší aplikací.</p>
+        </section>
 
-    <div class="container mt-4">
-        <div class="row">
-            <!-- Sidebar with user goals -->
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Goals</h4>
-                        <p>Current Weight: 70kg</p>
-                        <p>Target Weight: 65kg</p>
-                        <p>Water Intake: 1.5L/2L</p>
-                        <button class="btn btn-primary btn-block">Log Water Intake</button>
-                    </div>
-                </div>
-            </div>
+        <section id="features">
+            <h2>Funkce</h2>
+            <ul>
+                <li>Sledování fyzické aktivity</li>
+                <li>Monitorování stravy</li>
+                <li>Analýza spánku</li>
+                <li>Personalizovaná doporučení</li>
+            </ul>
+        </section>
 
-            <!-- Main content for logging workouts and meals -->
-            <div class="col-md-8">
-                <h2>Daily Overview</h2>
-                <p>Calories Burned: 450</p>
-                <p>Steps: 8,000</p>
-                <p>Workout: 30 min cardio</p>
-                <button class="btn btn-success">Log Workout</button>
-                <button class="btn btn-info">Log Meal</button>
+        <section id="about">
+            <h2>O nás</h2>
+            <p>Fitness and Wellness Tracker je navržen tak, aby vám pomohl dosáhnout vašich zdravotních cílů.</p>
+        </section>
 
-                <h3 class="mt-4">Progress Charts</h3>
-                <!-- Placeholder for charts -->
-                <div class="card">
-                    <div class="card-body">
-                        <canvas id="myChart" width="400" height="200"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        <section id="contact">
+            <h2>Kontakt</h2>
+            <p>Máte otázky? Kontaktujte nás na <a href="mailto:info@fitnesswellness.com">info@fitnesswellness.com</a>.</p>
+        </section>
+    </main>
 
-    <footer class="bg-dark text-white text-center py-3 mt-4">
-        <p>Fitness & Wellness Tracker © 2024</p>
+    <footer>
+        <p>&copy; 2024 Fitness and Wellness Tracker. Všechna práva vyhrazena.</p>
     </footer>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGaHfQ2J6fi6jGurR5360p4VM" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy1zWjIM+z6t27mYI4xNf3oF4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    
-    <!-- Chart.js for graphs -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                datasets: [{
-                    label: 'Calories Burned',
-                    data: [450, 380, 500, 600, 400, 450, 530],
-                    backgroundColor: 'rgba(0, 123, 255, 0.5)',
-                    borderColor: 'rgba(0, 123, 255, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-    </script>
-  </body>
+</body>
 </html>
